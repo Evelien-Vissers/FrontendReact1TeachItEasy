@@ -1,6 +1,6 @@
 
-import {inventory} from './inventory.js';
-import { calculateRemainingTvs } from './totalSoldTvs.js';
+import {inventory} from '../inventory.js';
+import { calculateRemainingTvs } from '../helpers/totalSoldTvs.js';
 
 const RemainingTvs = () => {
     const remainingTvs = calculateRemainingTvs(inventory);

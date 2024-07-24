@@ -1,4 +1,4 @@
-import {inventory} from './inventory.js';
+import {inventory} from '../inventory.js';
 import { calculateTotalSoldTvs } from './calculateTotalSoldTvs';
 
 const TotalSoldTvs = () => {
