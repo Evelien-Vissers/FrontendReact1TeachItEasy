@@ -357,3 +357,12 @@ console.log(sportSuitableTvs);
 //Gebruik van filter-methode om tv's te seleverteren die een schermgrootte van 65 inch of groter in hun 'availableSizes' array hebben:
 const largeScreenTvs = inventory.filter(tv => tv.availableSizes.some((s) => s >= 65));
 console.log(largeScreenTvs);
+//Hierboven is de some-methode gebruikt om te chekcen of tenmisnte 1 element in de array voldoet aan de voorwaarde.
+//De some-methode retourneert dan 'true', en de filter-methode voegt de tv toe aan de 'largeScreenTvs' array.
+//Eerst hadden de variabele de naam 'size' gegeven, maar ik kreeg een waarschuwing van ESLint dat 'size' gedefinieerd was maar niet gebruikt buiten de callback.
+
+//Opdracht 1F: Gebruik array-methoden om alle informatie te verzamelen van de tv's die over ambilight beschikken.
+const ambilightTvs = inventory.filter(tv => tv.options.some(option => option.name === "ambilight" && option.applicable));
+console.log(ambilightTvs);
+//De filter-methode doorloopt elke tv in de inventory en voor elke tv controleert hij of deze over Ambilight beschikt (mbv de some-methode);
+//De some-methode controleert of er in de 'options' array minstens 1 object (option) is met 'name: ambiLight' en 'applicable: true'.
