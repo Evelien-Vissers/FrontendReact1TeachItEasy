@@ -9,8 +9,9 @@ import BestSellingTv from './Components/BestSellingTv.jsx';
 import {bestSellingTv} from './inventory';
 import TvBrands from './Components/TvBrands.jsx';
 import AllTvs from "./Components/AllTvs.jsx";
-
-
+import SortBySold from "./Components/SortBySold.jsx";
+import SortByPrice from './Components/SortByPrice.jsx';
+import SortByRefreshRate from "./Components/SortByRefreshRate.jsx";
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
         <div className="products">
       <h1>Tech it easy dashboard</h1>
       <h2>Verkoopoverzicht</h2>
+
+      <SortBySold />
+      <SortByPrice />
+      <SortByRefreshRate />
 
       <div className="stats-container">
         <TotalSoldTvs />
