@@ -1,7 +1,7 @@
-import { formatScreenSizes } from '../formatScreenSizes.js';
+import { formatScreenSizes } from '../helpers/formatScreenSizes.js';
 
 const TvScreenSizes = ({ sizes }) => {
-    const formatttedSizes = formatScreenSizes(sizes);
+    const formattedSizes = formatScreenSizes(sizes);
 
     return (
         <div>

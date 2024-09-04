@@ -6,8 +6,8 @@ const RemainingTvs = () => {
     const remainingTvs = calculateRemainingTvs(inventory);
 
     return (
-        <div>
-            <p className="red-text">Aantal te verkopen producten</p>
+        <div className="red-box">
+            <p>Aantal te verkopen producten: {remainingTvs}</p>
         </div>
     )
 };

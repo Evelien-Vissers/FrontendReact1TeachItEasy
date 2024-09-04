@@ -1,12 +1,13 @@
 import { inventory } from '../inventory.js';
-import { calculateTotalStockedTvs } from '../totalStockedTvs.js';
+import { calculateTotalStockedTvs } from '../helpers/totalStockedTvs.js';
 
 const TotalStockedTvs = () => {
-    const totalStockedTvs = calculateTotalStockedTvs(inventory);
+    const totalStocked = calculateTotalStockedTvs(inventory);
 
     return (
-        <div>
-            <p className="blue-text">Aantal ingekochte producten</p>
+        <div className="blue-box">
+            <h3>Totaal aantal ingekochte TVs:</h3>
+            <p>{totalStocked}</p>
         </div>
     );
 };
