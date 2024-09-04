@@ -121,7 +121,7 @@ export let inventory = [
         screenQuality: 'Ultra HD/4K',
         smartTv: true,
         sourceImg: 'https://media.s-bol.com/B9n73k76VG2N/vQYEKNn/1200x734.jpg',
-        options:     [
+        options: [
             {
                 name: "wifi",
                 applicable: true,
@@ -157,7 +157,7 @@ export let inventory = [
         screenQuality: 'Ultra HD/4K',
         sourceImg: 'https://media.s-bol.com/ROVXLp4q9joq/1200x751.jpg',
         smartTv: true,
-        options:     [
+        options: [
             {
                 name: "wifi",
                 applicable: true,
@@ -327,5 +327,42 @@ export let inventory = [
         sold: 8,
     },
 ];
+// Deel 2 TechItEasy
+//Opdracht 1A: Gebruik een array-methode om een array te maken met daarin alle tv-type namen. Log de uitkomst in de console.
+const tvTypes = inventory.map(tv => tv.type);
+console.log(tvTypes);
+//Deze code doorloopt elk object in de inventory array en haalt het type-attribuut op, waarna het resultaat wordt opgeslagen in een nieuwe array genaamd 'tvTypes' (en wordt gelogd in de console).
 
+//Opdracht 1B: Gebruik een array-methode om alle informatie te verzamelen van de tv's die volledig uitverkocht zijn. Log de uitkomst in de console.
+//Filter tv's die uitverkocht zijn:
+const soldOutTvs = inventory.filter(tv => tv.sold === tv.originalStock);
+console.log(soldOutTvs);
+//Deze code doorloopt elk object in de inventory array en controleert of de 'sold' waarde gelijk is aan de 'originalStock' waarde. Is dat het geval, dan wordt dit object opgenomen in de 'soldOutTvs'.
 
+//Opdracht 1C: Gebruik een array-methode om de informatie van het tv-type 'NH3216SMART' op te halen.
+//Gebruik van find-methode om de informatie van dit type op te halen:
+const nh3216smartTv = inventory.find(tv => tv.type === 'NH3216SMART');
+console.log(nh3216smartTv);
+
+//Opdracht 1D: Gebruik een array-methode om een lisjt te maken van de merk- en tv-namen waarbij aangegeven wordt of deze geschikt zijn voor sport-kijkers (verversingssnelheid van 100Hz of hoger)
+//Doe dit in het format { name: 'Toshiba HD Tv', suitable: false }. Log de uitkomst in de console.
+const sportSuitableTvs = inventory.map(tv => ({
+    name: `${tv.brand} ${tv.name}`,
+    suitable: tv.refreshRate >= 100
+}));
+console.log(sportSuitableTvs);
+//Bij het uitvoeren van deze code krijg je een array met objecten die de merk- en tv-namen bevatten en een 'suitable' eigenschap die aangeeft of de tv geschikt is voor sport-kijkers (meer dan 100Hz verversingssnelheid).
+
+//Opdracht 1E: Gebruik array-methoden om alle informatie te verzamelen van de tv's die beschikbaar zijn in schermgroottes van 65inch en groter
+//Gebruik van filter-methode om tv's te seleverteren die een schermgrootte van 65 inch of groter in hun 'availableSizes' array hebben:
+const largeScreenTvs = inventory.filter(tv => tv.availableSizes.some((s) => s >= 65));
+console.log(largeScreenTvs);
+//Hierboven is de some-methode gebruikt om te chekcen of tenmisnte 1 element in de array voldoet aan de voorwaarde.
+//De some-methode retourneert dan 'true', en de filter-methode voegt de tv toe aan de 'largeScreenTvs' array.
+//Eerst hadden de variabele de naam 'size' gegeven, maar ik kreeg een waarschuwing van ESLint dat 'size' gedefinieerd was maar niet gebruikt buiten de callback.
+
+//Opdracht 1F: Gebruik array-methoden om alle informatie te verzamelen van de tv's die over ambilight beschikken.
+const ambilightTvs = inventory.filter(tv => tv.options.some(option => option.name === "ambilight" && option.applicable));
+console.log(ambilightTvs);
+//De filter-methode doorloopt elke tv in de inventory en voor elke tv controleert hij of deze over Ambilight beschikt (mbv de some-methode);
+//De some-methode controleert of er in de 'options' array minstens 1 object (option) is met 'name: ambiLight' en 'applicable: true'.

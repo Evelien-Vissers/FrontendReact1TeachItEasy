@@ -1,0 +1,155 @@
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Areas
+        2.1 Navigation
+        2.2 Header
+        2.3 Products
+    3. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* ------------------------------- 2. Areas ---------------------------------------- */
+h1 {
+    font-size: 72px;
+    padding: 48px 0;
+    color: black;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.12) 0 1px 4px;
+}
+
+/* --------------- 2.3 Products ------------------- */
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 100px;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 300px;
+    margin: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px 0;
+}
+.stats-container > * {
+    flex-basis: 30%;
+    margin: 0 10px;
+}
+.green-box {
+    background-color: lightgreen;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 200px;
+}
+.blue-box {
+    background-color: lightblue;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 200px;
+}
+.red-box {
+    background-color: lightcoral;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 200px;
+}
+.tv-item {
+    flex-direction: row;
+    border: 1px solid;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.tv-item img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.tv-item h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.tv-item ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.tv-item li {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.tv-item li img.icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+.tv-item img {
+    margin-top: 10px;
+}
+
+
+/* ------------------------------- 3. Media Queries -------------------------------- */
+
+@media screen and (max-width: 1200px) {
+    main {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product {
+        flex-grow: 1;
+    }
+    .stats-container {
+        flex-direction:column;
+        align-items: center;
+    }
+    .green-box {
+        background-color: lightgreen;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 200px;
+    }
+    .blue-box {
+        background-color: lightblue;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 200px;
+    }
+}
